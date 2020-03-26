@@ -35,6 +35,8 @@ class BakeryProblem:
 
             for c in candidates:
                 
+                metric = sum(c*np.array(list(self.products_price.values()), dtype=float))
+                
                 ingredient_use = np.zeros(shape=(len(self.available_ingredients)))
                 
                 for index in range(0,len(c)):
@@ -42,9 +44,7 @@ class BakeryProblem:
                     
                 ingredient_use = self.available_ingredients - ingredient_use
                 
-                metric = sum(ingredient_use[ingredient_use < 0])*sum(c)
-                
-                metric += sum(c*np.array(list(self.products_price.values()), dtype=float))
+                metric += sum(ingredient_use[ingredient_use < 0])*sum(c)
                 
                 fitness.append(metric)
 
