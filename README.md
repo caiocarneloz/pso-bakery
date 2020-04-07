@@ -13,3 +13,4 @@ pip install numpy inspyred
 Clone this repo to your local machine using:
 ```
 git clone https://github.com/caiocarneloz/pso-bakery.git
+```
